@@ -1,9 +1,10 @@
 import React from 'react';
+import RecentTips from '../Components/RecentTips';
 
 const Home = () => {
     return (
         <div>
-           its a homeme 
+            <RecentTips/>
         </div>
     );
 };

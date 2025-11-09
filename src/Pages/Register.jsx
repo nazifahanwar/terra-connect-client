@@ -84,7 +84,7 @@ const handleGoogleSignIn = () => {
                 name="name"
                 type="text"
                 placeholder="Your Name"
-                className="w-full border border-[#57cc99] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#57cc99]"
+                className="w-full border border-[#22577a] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#22577a]"
                 required
               />
             </div>
@@ -97,7 +97,7 @@ const handleGoogleSignIn = () => {
                 name="email"
                 type="email"
                 placeholder="Your Email"
-                className="w-full border border-[#57cc99] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#57cc99]"
+                className="w-full border border-[#22577a] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#22577a]"
                 required
               />
             </div>
@@ -110,7 +110,7 @@ const handleGoogleSignIn = () => {
                 name="photo"
                 type="url"
                 placeholder="Profile Image URL"
-                className="w-full border border-[#57cc99] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#57cc99]"
+                className="w-full border border-[#22577a] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#22577a]"
                 required
               />
             </div>
@@ -123,7 +123,7 @@ const handleGoogleSignIn = () => {
                 name="password"
                 type={showPass ? 'text' : 'password'}
                 placeholder="Create Password"
-                className="w-full border border-[#57cc99] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#57cc99]"
+                className="w-full border border-[#22577a] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#22577a]"
                 required
               />
               <button
@@ -139,7 +139,7 @@ const handleGoogleSignIn = () => {
             <button
             type='submit'
               className={`w-full text-white font-medium py-2 rounded-md transition ${
-              loading ? 'bg-secondary cursor-not-allowed' : 'bg-[#57cc99] hover:bg-[#45b885]'
+              loading ? 'bg-secondary cursor-not-allowed' : 'bg-[#22577a] hover:bg-[#45b885]'
             }`}
             disabled={loading}
           >
@@ -150,7 +150,7 @@ const handleGoogleSignIn = () => {
             <button
               type="button"
               onClick={handleGoogleSignIn}
-              className="w-full border border-[#57cc99] text-gray-700 font-medium py-2 rounded-md hover:bg-gray-100 transition flex items-center justify-center gap-2"
+              className="w-full border border-[#22577a] text-gray-700 font-medium py-2 rounded-md hover:bg-gray-100 transition flex items-center justify-center gap-2"
             >
               <FcGoogle className="text-xl" />
               <p>Continue with Google</p>
@@ -160,7 +160,7 @@ const handleGoogleSignIn = () => {
           <div className="mt-3 text-center text-sm">
             <p>
               Already have an account?{' '}
-              <Link className="underline text-[#57cc99]" to="/authentication/login">
+              <Link className="underline text-[#22577a]" to="/authentication/login">
                 Log in
               </Link>
             </p>

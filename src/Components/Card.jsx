@@ -10,7 +10,7 @@ const ChallengeCard = ({ challenge }) => {
       </figure>
       <div className='card-body'>
         <div className='flex justify-between items-center'>
-          <h2 className='card-title max-sm:text-sm hover:text-[#344e41]'>{title}</h2>
+          <h2 className='card-title max-sm:text-sm hover:text-[#22577a]'>{title}</h2>
         </div>
         <p className='text-gray-600 mb-2'>{category}</p>
         <p className='text-gray-700 mb-2'>
@@ -20,11 +20,11 @@ const ChallengeCard = ({ challenge }) => {
           <span className='text-sm text-gray-500'>Duration: {duration} days</span>
           <span className='text-sm text-gray-500'>Participants: {participants}</span>
         </div>
-        {/* <Link to={`/challenge-details/${_id}`}>
-          <button className='p-2 w-full rounded-md bg-[#344e41] cursor-pointer hover:bg-[#2c3b31]'>
+        <Link to={`/challenge-details/${_id}`}>
+          <button className='p-2 w-full rounded-md bg-[#22577a] cursor-pointer font-medium hover:bg-[#22577a70]'>
             <p className='text-white'>View Details</p>
           </button>
-        </Link> */}
+        </Link>
       </div>
     </div>
   );

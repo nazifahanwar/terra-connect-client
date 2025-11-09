@@ -8,6 +8,9 @@ import LogIn from "../Pages/LogIn";
 import ForgetPass from "../Pages/ForgetPass";
 import Challenges from "../Pages/Challenges";
 import MyActivities from "../Pages/MyActivities"
+import ChallengeDetails from "../Pages/ChallengeDetails";
+import PrivateRoute from "./PrivateRoute";
+import Loader from "../Components/Loader";
 
 export const router = createBrowserRouter([
   {
@@ -16,11 +19,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: Navbar
-      },
-      {
-        path:'/home',
-        Component:Home
+        Component: Home
       },
       {
         path:"/challenges",
@@ -29,6 +28,12 @@ export const router = createBrowserRouter([
       {
         path:"/my-activities",
         Component:MyActivities
+      },
+      {
+        path: 'challenge-details/:id',
+        loader: ({params}) => fetch(`http://localhost:5000/challenges/${params.id}`),
+        element: <PrivateRoute><ChallengeDetails/></PrivateRoute>,
+        hydrateFallbackElement:<Loader></Loader>
       }
     ]
   },
@@ -45,9 +50,10 @@ export const router = createBrowserRouter([
         Component: LogIn
       },
       {
-        path: "forget-pass",
+        path: "forget-password",
         Component: ForgetPass
       }
+        
     ]
   }
 ]);

@@ -49,7 +49,7 @@ const ForgetPass = () => {
             ref={emailRef}
             type="email"
             placeholder="Your Email"
-            className="w-full border border-[#57cc99] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#57cc99]"
+            className="w-full border border-[#22577a] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#22577a]"
             required
           />
 
@@ -58,7 +58,7 @@ const ForgetPass = () => {
             className={`w-full text-white font-medium py-2 rounded-md transition ${
               loading
                 ? "bg-secondary cursor-not-allowed"
-                : "bg-[#57cc99] hover:bg-[#45b885]"
+                : "bg-[#22577a] hover:bg-[#45b885]"
             }`}
             disabled={loading}
           >
@@ -70,7 +70,7 @@ const ForgetPass = () => {
           </button>
 
           <Link to='/authentication/login'><button
-            className="w-full border border-[#57cc99] text-gray-700 font-medium py-2 rounded-md hover:bg-gray-100 transition"
+            className="w-full border border-[#22577a] text-gray-700 font-medium py-2 rounded-md hover:bg-gray-100 transition"
           >
             Back to Login
           </button></Link>

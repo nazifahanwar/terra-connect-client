@@ -95,13 +95,13 @@ const LogIn = () => {
 
             <div className="flex justify-between items-center text-sm">
               <div>
-                <Link to='/authentication/forget-pass' className="text-gray-700 hover:text-black cursor-pointer">Forgot password?</Link>
+                <Link to='/authentication/forget-password' className="text-gray-700 hover:text-black cursor-pointer">Forgot password?</Link>
               </div>
             </div>
 
             <button
               type="submit"className={`w-full text-white font-medium py-2 rounded-md transition ${
-              loading ? 'bg-secondary cursor-not-allowed' : 'bg-[#57cc99] hover:bg-[#45b885]'
+              loading ? 'bg-secondary cursor-not-allowed' : 'bg-[#22577a] hover:bg-[#45b885]'
             }`}
             disabled={loading}
           >
@@ -121,7 +121,7 @@ const LogIn = () => {
           <div className="mt-3 text-center text-sm">
             <p>
               Don’t have an account?{' '}
-              <Link className="underline text-[#344e41]" to="/authentication/register">
+              <Link className="underline text-[#22577a]" to="/authentication/register">
                 Register
               </Link>
             </p>
