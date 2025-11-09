@@ -29,11 +29,10 @@ const ForgetPass = () => {
   };
 
   return (
-    <div
-      className="flex items-center justify-center min-h-screen relative container mx-auto"
-      style={{ backgroundImage: `url(${authLogo})` }}
-    >
-      <div className="absolute inset-0 bg-black/40"></div>
+    <div className="   min-h-screen relative" style={{ backgroundImage: `url(${authLogo})` }}>
+            <div className="absolute inset-0 bg-black/40 "></div>
+      <div
+      className="container mx-auto flex items-center justify-center min-h-screen">
 
       <div className="px-2">
         <div className="relative w-full max-w-sm bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg z-10">
@@ -78,6 +77,7 @@ const ForgetPass = () => {
         </div>
       </div>
       </div>
+    </div>
     </div>
   );
 };
