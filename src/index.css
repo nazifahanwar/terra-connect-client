@@ -11,8 +11,8 @@
   default: true;
   --color-base-100: #FFFFFF;
   --color-base-200:#c7f9cc;
-  --color-base-300:#22577a;
+  --color-base-300:#57cc99 ;
   --color-primary: #22577a;
-  --color-secondary:#FFFFFF;
+  --color-secondary:#22577a;
   --color-accent: #4B5563;
 }
