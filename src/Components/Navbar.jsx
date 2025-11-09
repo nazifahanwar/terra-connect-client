@@ -14,8 +14,8 @@ const Navbar = () => {
 const links =
     <>
     <li><NavLink className='text-white font-semibold' to='/'>Home</NavLink></li>
-    <li><NavLink className='text-white font-semibold' to='/plants'>Plants</NavLink></li>
-    <li><NavLink className='text-white font-semibold' to='/my-profile'>My Profile</NavLink></li>
+    <li><NavLink className='text-white font-semibold' to='/plants'>Challenges</NavLink></li>
+    <li><NavLink className='text-white font-semibold' to='/my-profile'>My Activities</NavLink></li>
     </>
 const handleLogOut = () => {
     logOut()
@@ -46,8 +46,8 @@ const handleLogOut = () => {
       </ul>
     </div>
     <div className='flex items-center justify-center lg:gap-1'>
-        <img src={logo} className="h-[40px] w-[40px]" />
-    <Link className=" text-xl playwrite-au-tas text-white pt-2">Terra Connect</Link>
+        <img src={logo} referrerPolicy="no-referrer" className="h-[40px] w-[40px]" />
+    <Link className="mb-2 text-2xl text-white pt-2 font-medium">Terra Connect</Link>
 
     </div>
   </div>
@@ -86,7 +86,7 @@ const handleLogOut = () => {
   ):(
 
 <div><Link to='/authentication/register' className=' text-white font-semibold rounded-xl p-2 hover:border-gray-400 hover:border-2' >Register</Link>
-    <Link to='/authentication/login'className=' border-1 rounded-xl p-2 bg-white ml-3 text-[#344e41] font-semibold'>Log In</Link></div>)
+    <Link to='/authentication/login'className='rounded-xl p-2 bg-white ml-3 text-[#344e41] font-semibold'>Log In</Link></div>)
 }   
     </div>
   </div>

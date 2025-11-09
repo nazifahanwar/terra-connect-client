@@ -1,4 +1,4 @@
-import React, { use, useRef, useState } from "react";
+import React, { use, useRef} from "react";
 import { AuthContext } from "../AuthContext/AuthContext";
 import { toast } from "sonner";
 import authLogo from "../assets/authBg.jpg";
@@ -30,12 +30,13 @@ const ForgetPass = () => {
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen relative"
+      className="flex items-center justify-center min-h-screen relative container mx-auto"
       style={{ backgroundImage: `url(${authLogo})` }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className="relative w-full max-w-sm bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg z-10">
+      <div className="px-2">
+        <div className="relative w-full max-w-sm bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg z-10">
         <h2 className="text-2xl text-center">
           Reset Password
         </h2>
@@ -75,6 +76,7 @@ const ForgetPass = () => {
             Back to Login
           </button></Link>
         </div>
+      </div>
       </div>
     </div>
   );
