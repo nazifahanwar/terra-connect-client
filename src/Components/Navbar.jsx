@@ -14,8 +14,8 @@ const Navbar = () => {
 const links =
     <>
     <li><NavLink className='text-white font-semibold' to='/'>Home</NavLink></li>
-    <li><NavLink className='text-white font-semibold' to='/plants'>Challenges</NavLink></li>
-    <li><NavLink className='text-white font-semibold' to='/my-profile'>My Activities</NavLink></li>
+    <li><NavLink className='text-white font-semibold' to='/challenges'>Challenges</NavLink></li>
+    <li><NavLink className='text-white font-semibold' to='/my-activities'>My Activities</NavLink></li>
     </>
 const handleLogOut = () => {
     logOut()
