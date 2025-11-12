@@ -2,6 +2,7 @@ import React from 'react';
 import RecentTips from '../Components/RecentTips';
 import UpcomingEvents from '../Components/UpcomingEvents';
 import WhyGoGreen from '../Components/WhySoGreen';
+import HowItWorks from '../Components/HowItWorks';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <RecentTips/>
             <UpcomingEvents/>
             <WhyGoGreen/>
+            <HowItWorks/>
         </div>
     );
 };
