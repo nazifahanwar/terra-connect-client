@@ -11,6 +11,7 @@ import MyActivities from "../Pages/MyActivities"
 import ChallengeDetails from "../Pages/ChallengeDetails";
 import PrivateRoute from "./PrivateRoute";
 import Loader from "../Components/Loader";
+import Error from "../Pages/Error";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/challenges/${params.id}`),
         element: <PrivateRoute><ChallengeDetails/></PrivateRoute>,
         hydrateFallbackElement:<Loader></Loader>
+      },
+      {
+        path:'*',
+        Component:Error
       }
     ]
   },

@@ -33,7 +33,6 @@ const RecentTips = () => {
             key={tip._id}
             className="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition"
           >
-            {/* Header: Avatar + Name | Date */}
             <div className="flex justify-between items-center mb-2">
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">
@@ -48,10 +47,8 @@ const RecentTips = () => {
               </span>
             </div>
 
-            {/* Tip content */}
             <p className="text-gray-700 mb-3">{tip.content}</p>
 
-            {/* Upvotes */}
             <div className="flex items-center gap-2 text-gray-600">
               <FaThumbsUp />
               <span>{tip.upvotes}</span>
