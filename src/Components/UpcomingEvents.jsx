@@ -26,9 +26,9 @@ const UpcomingEvents = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto mt-10 px-4">
       <h2 className="text-3xl font-bold text-[#22577a] mb-2 text-center">Upcoming Events</h2>
-      <p className="text-gray-500 mb-3 text-center">Don't miss out on these community activities!</p>
+      <p className="text-accent mb-3 text-center">Don't miss out on these community activities!</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {events.map((event) => {

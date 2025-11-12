@@ -23,10 +23,8 @@ const RecentTips = () => {
 
   return (
     <section className="container mx-auto mt-10 px-4">
-      <h2 className="text-3xl font-bold text-[#22577a] mb-3 text-center">Recent Tips</h2>
-        <p className="text-accent text-center mb-6">
-    Latest 5 community tips to help you live sustainably and reduce waste.
-  </p>
+  <h2 className="text-3xl font-bold text-[#22577a] mb-2 text-center">Recent Tips</h2>
+      <p className="text-accent mb-3 text-center">Latest 5 community tips to help you live sustainably and reduce waste.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tips.map((tip) => (
           <div
