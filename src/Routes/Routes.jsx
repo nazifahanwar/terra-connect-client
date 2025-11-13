@@ -11,6 +11,7 @@ import ChallengeDetails from "../Pages/ChallengeDetails";
 import PrivateRoute from "./PrivateRoute";
 import Loader from "../Components/Loader";
 import Error from "../Pages/Error";
+import AddChallenge from "../Pages/AddChallenge";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "forget-password",
         Component: ForgetPass
+      },
+      {
+        path:'challenges/add',
+        element:<PrivateRoute><AddChallenge/></PrivateRoute>
       },
       {
         path:'*',

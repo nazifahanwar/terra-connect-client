@@ -4,6 +4,7 @@ import axios from 'axios';
 import { FaEdit, FaCheckCircle, FaHourglassHalf, FaTimesCircle } from 'react-icons/fa';
 import { AuthContext } from '../AuthContext/AuthContext';
 import Loader from '../Components/Loader';
+import { ImBin } from "react-icons/im";
 
 const MyActivities = () => {
  const { user } = use(AuthContext); 
@@ -69,6 +70,34 @@ const MyActivities = () => {
         })
        
     };
+   const handleDeleteChallenge = (userChallengeId) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "This will remove the challenge from your list!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, remove it!"
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      try {
+        const res = await axios.delete(`http://localhost:5000/user-challenges/${userChallengeId}`);
+        if (res.data.deletedCount) {
+          Swal.fire("Removed!", "Challenge removed from your list.", "success");
+          setUserChallenges(prev => prev.filter(uc => uc._id !== userChallengeId));
+        }
+      } catch (err) {
+        console.error(err);
+        Swal.fire("Error", "Failed to remove challenge", "error");
+      }
+    }
+  });
+};
+
+
+
+
     
     const openStatusModal = (challenge) => {
         setSelectedChallenge(challenge);
@@ -113,11 +142,11 @@ const MyActivities = () => {
                             <th className="text-left">Challenge</th>
                             <th className="text-left">Category</th>
                             <th className="text-left">Status</th>
-                            <th className="text-center">Action</th>
+                            <th className="text-center">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {userChallenges.map((uc, index) => (
+                        {userChallenges.filter(uc => uc.challengeDetails).map((uc, index) => (
                             <tr key={uc._id} className="hover:bg-gray-50">
                                 <td>{index + 1}</td>
                                 <td>
@@ -141,13 +170,14 @@ const MyActivities = () => {
                                 <td>
                                     <StatusBadge status={uc.status} />
                                 </td>
-                                <td className="text-center">
+                                <td className="text-center flex gap-3">
                                     <button
                                         onClick={() => openStatusModal(uc)}
                                         className="btn btn-primary btn-sm btn-outline gap-2"
                                     >
                                         <FaEdit /> Change Status
                                     </button>
+                                    <button onClick={()=>{handleDeleteChallenge(uc._id)}} className="btn btn-primary btn-sm btn-outline gap-2" ><ImBin/> Delete</button>
                                 </td>
                             </tr>
                         ))}
