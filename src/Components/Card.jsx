@@ -21,7 +21,7 @@ const ChallengeCard = ({ challenge }) => {
           <span className='text-sm text-gray-500'>Participants: {participants}</span>
         </div>
         <Link to={`/challenge-details/${_id}`}>
-          <button className='p-2 w-full rounded-md bg-[#22577a] cursor-pointer font-medium hover:bg-[#22577a70]'>
+          <button className='p-2 w-full rounded-md bg-[#22577a] cursor-pointer font-medium hover:bg-secondary'>
             <p className='text-white'>View Details</p>
           </button>
         </Link>

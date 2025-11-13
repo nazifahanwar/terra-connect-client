@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
       },
       {
         path:"/my-activities",
-        Component:MyActivities
+        element:<PrivateRoute><MyActivities/></PrivateRoute>
       },
       {
         path: 'challenge-details/:id',
