@@ -71,7 +71,7 @@ const ChallengeDetails = () => {
           <div className="flex items-center gap-2">
             <FaBullseye className="text-[#22577a]" />
             <div className="flex gap-1">
-              <span>Target: {challenge.target}</span>
+              <span>Target:You have to make {challenge.target}</span>
               <span>{challenge.impactMetric}</span>
             </div>
           </div>

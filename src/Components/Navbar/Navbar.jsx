@@ -2,7 +2,6 @@ import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from '../../assets/icons8-sustainability-64.png'
 import  './Navbar.css'
-//import Hero from '../Hero/Hero';
 import userIcon from '../../assets/userIcon.png'
 import { AuthContext } from '../../AuthContext/AuthContext';
 import { MdMenu } from 'react-icons/md';
@@ -39,7 +38,7 @@ const handleLogOut = () => {
       </div>
       <ul
         tabIndex="-1"
-        className="menu menu-sm dropdown-content  rounded-box z-999 mt-3 w-52 p-2 shadow">
+        className="menu menu-sm bg-base-300 dropdown-content  rounded-box z-999 mt-3 w-52 p-2 shadow">
         {links}
         {user && 
         <li><button onClick={handleLogOut} className="font-semibold text-white">Log Out</button></li>}
@@ -70,7 +69,7 @@ const handleLogOut = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content  rounded-box z-9999 mt-3 w-40 p-2 shadow"
+        className="menu menu-sm bg-base-300 dropdown-content  rounded-box z-9999 mt-3 w-40 p-2 shadow"
       >
         <li>
           <a className="font-semibold text-gray-700">{user.displayName}</a>

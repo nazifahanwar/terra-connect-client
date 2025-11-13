@@ -46,7 +46,7 @@ useEffect(() => {
 
   return (
     <div className="container mx-auto p-4">
-     <div className='flex justify-between'>
+     <div className='flex max-md:flex-col justify-between'>
        <div className="flex gap-4 mb-6"> 
         <select
           className="select select-bordered"
@@ -69,7 +69,7 @@ useEffect(() => {
           onChange={(e) => setStartDateFilter(e.target.value)}
         />
       </div>
-<Link to="/challenges/add"><button className='flex items-center btn btn-primary  btn-outline'><span><IoIosAddCircle/></span> <span>Add Challenge</span></button></Link>
+<Link to="/challenges/add"><button className='flex items-center btn btn-primary  btn-outline mb-2'><span><IoIosAddCircle/></span> <span>Add Challenge</span></button></Link>
      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {filteredChallenges.map((challenge) => ( 

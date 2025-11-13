@@ -10,22 +10,25 @@ import "swiper/css/navigation";
 import "./Hero.css";
 import { useNavigate } from "react-router";
 import { AuthContext } from "../../AuthContext/AuthContext";
+import Loader from "../Loader";
 
 export default function Hero() {
     const {user} = use(AuthContext)
   const [featuredChallenges, setFeaturedChallenges] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const navigate = useNavigate();
-
+const [loading,setLoading] = useState(true)
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
         const res = await axios.get("http://localhost:5000/challenges");
         const featured = res.data
-          .filter(ch => ch.featured) // only featured
+          .filter(ch => ch.featured) 
         setFeaturedChallenges(featured);
       } catch (err) {
         console.error("Error fetching featured challenges:", err);
+      }finally {
+        setLoading(false); // hide loader after data is fetched
       }
     };
     fetchFeatured();
@@ -37,6 +40,7 @@ const handleView = (id) => {
       navigate("/login");
     }
   };
+  if (loading) return <Loader/>
   return (
     <Swiper
       spaceBetween={30}
