@@ -73,7 +73,6 @@ const ChallengeDetails = () => {
 
   return (
     <div className="max-w-6xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl flex flex-col lg:flex-row gap-8">
-      {/* Challenge Image */}
       <img
         src={challenge.imageUrl}
         alt={challenge.title}

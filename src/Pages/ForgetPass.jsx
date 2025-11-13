@@ -20,7 +20,6 @@ const ForgetPass = () => {
       setLoading(true);
       await resetPassword(email);
       toast.success("Reset link sent! Please check your gmail.");
-      window.open("https://mail.google.com", "_blank");
     } catch (error) {
       toast.error(error.message);
     } finally {
@@ -40,7 +39,7 @@ const ForgetPass = () => {
           Reset Password
         </h2>
 
-        <p className="text-gray-600 text-center mb-6">
+        <p className="text-accent text-center mb-6">
           Enter your email and we will send you a password reset link.
         </p>
 
@@ -69,7 +68,7 @@ const ForgetPass = () => {
             )}
           </button>
 
-          <Link to='/authentication/login'><button
+          <Link to='/login'><button
             className="w-full border border-[#22577a] text-gray-700 font-medium py-2 rounded-md hover:bg-gray-100 transition"
           >
             Back to Login

@@ -4,11 +4,13 @@ import UpcomingEvents from '../Components/UpcomingEvents';
 import WhyGoGreen from '../Components/WhySoGreen';
 import HowItWorks from '../Components/HowItWorks';
 import Hero from '../Components/Hero/Hero';
+import ActiveChallenges from '../Components/ActiveChallenges';
 
 const Home = () => {
     return (
         <div className='flex flex-col gap-8'>
             <Hero/>
+            <ActiveChallenges/>
             <WhyGoGreen/>
             <HowItWorks/>
             <UpcomingEvents/>
