@@ -1,8 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layouts/MainLayout";
-import Navbar from "../Components/Navbar";
+import Navbar from "../Components/Navbar/Navbar";
 import Home from "../Pages/Home"
-import AuthLayout from "../Layouts/AuthLayout";
 import Register from "../Pages/Register";
 import LogIn from "../Pages/LogIn";
 import ForgetPass from "../Pages/ForgetPass";
@@ -37,16 +36,6 @@ export const router = createBrowserRouter([
         hydrateFallbackElement:<Loader></Loader>
       },
       {
-        path:'*',
-        Component:Error
-      }
-    ]
-  },
-  {
-    path: "/authentication",
-    Component: AuthLayout,
-    children: [
-      {
         path: "register",
         Component: Register
       },
@@ -57,8 +46,16 @@ export const router = createBrowserRouter([
       {
         path: "forget-password",
         Component: ForgetPass
+      },
+      {
+        path:'*',
+        Component:Error
       }
-        
     ]
-  }
+  },
+  
+      
+        
+    
+
 ]);

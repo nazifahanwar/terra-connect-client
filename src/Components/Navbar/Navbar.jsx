@@ -1,10 +1,10 @@
 import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
-import logo from '../assets/icons8-sustainability-64.png'
-import  './Navbar/Navbar.css'
+import logo from '../../assets/icons8-sustainability-64.png'
+import  './Navbar.css'
 //import Hero from '../Hero/Hero';
-import userIcon from '../assets/userIcon.png'
-import { AuthContext } from '../AuthContext/AuthContext';
+import userIcon from '../../assets/userIcon.png'
+import { AuthContext } from '../../AuthContext/AuthContext';
 import { MdMenu } from 'react-icons/md';
 import { CiMenuFries } from 'react-icons/ci';
 import { toast } from 'sonner';
@@ -85,8 +85,8 @@ const handleLogOut = () => {
     </div>
   ):(
 
-<div><Link to='/authentication/register' className=' text-white font-semibold rounded-xl p-2 hover:border-gray-400 hover:border-2' >Register</Link>
-    <Link to='/authentication/login'className='rounded-xl p-2 bg-white ml-3 text-[#344e41] font-semibold'>Log In</Link></div>)
+<div><Link to='/register' className=' text-white font-semibold rounded-xl p-2 hover:border-gray-400 hover:border-2' >Register</Link>
+    <Link to='/login'className='rounded-xl p-2 bg-white ml-3 text-[#344e41] font-semibold'>Log In</Link></div>)
 }   
     </div>
   </div>

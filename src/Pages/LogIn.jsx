@@ -95,7 +95,7 @@ const LogIn = () => {
 
             <div className="flex justify-between items-center text-sm">
               <div>
-                <Link to='/authentication/forget-password' className="text-gray-700 hover:text-black cursor-pointer">Forgot password?</Link>
+                <Link to='/forget-password' className="text-gray-700 hover:text-black cursor-pointer">Forgot password?</Link>
               </div>
             </div>
 
@@ -121,7 +121,7 @@ const LogIn = () => {
           <div className="mt-3 text-center text-sm">
             <p>
               Don’t have an account?{' '}
-              <Link className="underline text-[#22577a]" to="/authentication/register">
+              <Link className="underline text-[#22577a]" to="/register">
                 Register
               </Link>
             </p>

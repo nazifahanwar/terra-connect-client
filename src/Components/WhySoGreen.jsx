@@ -8,7 +8,7 @@ const WhyGoGreen = () => {
       <p className="text-accent mb-3 text-center">Choosing sustainability is choosing a better tomorrow — for you, your community, and the planet.</p>
       <div className="grid sm:grid-cols-2 gap-6 text-left">
         <div className="flex items-center gap-4 bg-white shadow-md p-5 rounded-lg hover:shadow-lg transition">
-          <FaLeaf className="text-green-600 text-2xl mt-1" />
+          <FaLeaf className="text-green-600 text-5xl mt-1" />
           <div>
             <h3 className="font-semibold text-lg text-[#22577a]">Healthier Planet</h3>
             <p className="text-gray-600">
@@ -18,7 +18,7 @@ const WhyGoGreen = () => {
         </div>
 
         <div className="flex  items-center gap-4 bg-white shadow-md p-5 rounded-lg hover:shadow-lg transition">
-          <FaGlobeAmericas className="text-blue-600 text-2xl mt-1" />
+          <FaGlobeAmericas className="text-blue-600 text-5xl mt-1" />
           <div>
             <h3 className="font-semibold text-lg text-[#22577a]">Fight Climate Change</h3>
             <p className="text-gray-600">
@@ -28,7 +28,7 @@ const WhyGoGreen = () => {
         </div>
 
         <div className="flex items-center gap-4 bg-white shadow-md p-5 rounded-lg hover:shadow-lg transition">
-          <FaHeart className="text-red-500 text-2xl mt-1" />
+          <FaHeart className="text-red-500 text-5xl mt-1" />
           <div>
             <h3 className="font-semibold text-lg text-[#22577a]">Better Quality of Life</h3>
             <p className="text-gray-600">
@@ -38,7 +38,7 @@ const WhyGoGreen = () => {
         </div>
 
         <div className="flex items-center gap-4 bg-white shadow-md p-5 rounded-lg hover:shadow-lg transition">
-          <FaRecycle className="text-yellow-600 text-2xl mt-1" />
+          <FaRecycle className="text-yellow-600 text-5xl mt-1" />
           <div>
             <h3 className="font-semibold text-lg text-[#22577a]">Resource Conservation</h3>
             <p className="text-gray-600">

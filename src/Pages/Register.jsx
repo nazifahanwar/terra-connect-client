@@ -160,7 +160,7 @@ const handleGoogleSignIn = () => {
           <div className="mt-3 text-center text-sm">
             <p>
               Already have an account?{' '}
-              <Link className="underline text-[#22577a]" to="/authentication/login">
+              <Link className="underline text-[#22577a]" to="/login">
                 Log in
               </Link>
             </p>
