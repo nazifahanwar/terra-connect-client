@@ -61,7 +61,7 @@ const handleLogOut = () => {
      {user ?  (
     <div className="dropdown dropdown-end flex bg-transparent">
       <div className='flex flex-col items-center '>
-        <img className="w-10 rounded-full" referrerPolicy="no-referrer" src={user.photoURL || userIcon}/>
+        <img className="w-10 rounded-full border-2 border-white" referrerPolicy="no-referrer" src={user.photoURL || userIcon}/>
       </div>
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar max-lg:hidden">
         <CiMenuFries className=" text-white text-2xl rounded-full"/>
@@ -72,7 +72,7 @@ const handleLogOut = () => {
         className="menu menu-sm bg-base-300 dropdown-content  rounded-box z-9999 mt-3 w-40 p-2 shadow"
       >
         <li>
-          <a className="font-semibold text-gray-700">{user.displayName}</a>
+          <a className="font-semibold text-white">{user.displayName}</a>
         </li>
         <li>
           <button onClick={handleLogOut} className="font-semibold text-red-500">

@@ -7,7 +7,7 @@ import Loader from '../Components/Loader';
 import { ImBin } from "react-icons/im";
 
 const MyActivities = () => {
-    const { user } = useContext(AuthContext);  // useContext, not use
+    const { user } = useContext(AuthContext);  
     const [userChallenges, setUserChallenges] = useState([]);
     const [createdChallenges, setCreatedChallenges] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -20,11 +20,10 @@ const MyActivities = () => {
 
         setLoading(true);
 
-        // Fetch joined challenges
-        const joinedRes = await axios.get(`http://localhost:5000/user-challenges?buyer_email=${user.email}`);
+        const joinedRes = await axios.get(`https://tera-connect-server.vercel.app/user-challenges?buyer_email=${user.email}`);
         const fullData = await Promise.all(joinedRes.data.map(async (uc) => {
             try {
-                const chRes = await axios.get(`http://localhost:5000/challenges/${uc.challenge_id}`);
+                const chRes = await axios.get(`https://tera-connect-server.vercel.app/challenges/${uc.challenge_id}`);
                 return { ...uc, challengeDetails: chRes.data };
             } catch (err) {
                 console.error(`Failed to fetch details for ID ${uc.challenge_id}`, err);
@@ -33,7 +32,7 @@ const MyActivities = () => {
         }));
         setUserChallenges(fullData);
 
-        const createdRes = await axios.get(`http://localhost:5000/challenges`);
+        const createdRes = await axios.get(`https://tera-connect-server.vercel.app/challenges`);
         setCreatedChallenges(createdRes.data.filter(ch => ch.createdBy === user.email));
 
         setLoading(false);
@@ -44,14 +43,18 @@ const MyActivities = () => {
     }, [user]);
 
     const handleStatusUpdate = async () => {
+        
         const userChallengeId = selectedChallenge._id;
-        const res = await axios.patch(`http://localhost:5000/user-challenges/${userChallengeId}`, { status: newStatus });
+        const res = await axios.patch(`https://tera-connect-server.vercel.app/user-challenges/${userChallengeId}`, { status: newStatus });
+        
+        console.log(res.data);
+
         if (res.data.result.modifiedCount > 0) {
             Swal.fire({
                 title: "Updated!",
                 text: `Challenge status set to: ${newStatus}`,
                 icon: "success",
-                confirmButtonColor: "#3085d6",
+                confirmButtonColor: "#22577a",
             });
             setSelectedChallenge(null);
             fetchUserChallenges();
@@ -68,7 +71,7 @@ const MyActivities = () => {
         });
 
         if (result.isConfirmed) {
-            await axios.delete(`http://localhost:5000/challenges/${challengeId}`, {
+            await axios.delete(`https://tera-connect-server.vercel.app/challenges/${challengeId}`, {
   data: { userEmail: user.email }});
             Swal.fire('Deleted!', 'Your challenge has been deleted.', 'success');
             setCreatedChallenges(prev => prev.filter(ch => ch._id !== challengeId));

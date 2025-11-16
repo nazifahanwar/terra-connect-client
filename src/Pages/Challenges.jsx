@@ -4,6 +4,7 @@ import Loader from '../Components/Loader';
 import Card from '../Components/Card';
 import { Link } from 'react-router';
 import { IoIosAddCircle } from "react-icons/io";
+import CardSkeleton from '../Components/CardSkeleton';
 
 
 const Challenges = () => {
@@ -17,7 +18,7 @@ const Challenges = () => {
   useEffect(() => {
     const fetchChallenges = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/challenges'); 
+        const res = await axios.get('https://tera-connect-server.vercel.app/challenges'); 
         setChallenges(res.data);
         setFilteredChallenges(res.data); 
       } catch (err) {
@@ -42,7 +43,7 @@ useEffect(() => {
 
     setFilteredChallenges(temp);
   }, [categoryFilter, startDateFilter, challenges]);
-  if (loading) return <Loader></Loader>;
+  // if (loading) return <Loader></Loader>;
 
   return (
     <div className="container mx-auto p-4">
@@ -71,8 +72,10 @@ useEffect(() => {
       </div>
 <Link to="/challenges/add"><button className='flex items-center btn btn-primary  btn-outline mb-2'><span><IoIosAddCircle/></span> <span>Add Challenge</span></button></Link>
      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {filteredChallenges.map((challenge) => ( 
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-screen">
+        {loading ? [...Array(8)].map((_, i) => (
+          <CardSkeleton key={i} />
+        )):filteredChallenges.map((challenge) => ( 
           <Card key={challenge._id} challenge={challenge} />
         ))}
       </div>

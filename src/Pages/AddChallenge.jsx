@@ -35,7 +35,7 @@ const AddChallenge = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/user-challenges', formData);
+      const res = await axios.post('https://tera-connect-server.vercel.app/user-challenges', formData);
       if (res.data.insertedId || res.data.acknowledged) {
         Swal.fire('Success', 'Challenge created successfully!', 'success');
         navigate('/challenges');

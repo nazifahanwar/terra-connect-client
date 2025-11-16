@@ -8,7 +8,7 @@ const RecentTips = () => {
   useEffect(() => {
     const fetchTips = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/tips");
+        const res = await axios.get("https://tera-connect-server.vercel.app/tips");
         const sortedTips = res.data
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
           .slice(0, 5);

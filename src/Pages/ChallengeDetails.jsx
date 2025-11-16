@@ -17,7 +17,7 @@ const ChallengeDetails = () => {
       if (!user?.email) return;
 
       try {
-        const res = await axios.get(`http://localhost:5000/user-challenges?buyer_email=${user.email}`);
+        const res = await axios.get(`https://tera-connect-server.vercel.app/user-challenges?buyer_email=${user.email}`);
         const joined = res.data.find(uc => uc.challenge_id === challenge._id);
         if (joined) setUserJoined(true);
       } catch (err) {
@@ -33,7 +33,7 @@ const ChallengeDetails = () => {
     setLoading(true);
 
     try {
-      await axios.post(`http://localhost:5000/challenges/join/${challenge._id}`, {
+      await axios.post(`https://tera-connect-server.vercel.app/challenges/join/${challenge._id}`, {
         buyer_email: user.email
       });
       setUserJoined(true);

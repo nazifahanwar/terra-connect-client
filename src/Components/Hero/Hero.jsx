@@ -21,7 +21,7 @@ const [loading,setLoading] = useState(true)
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/challenges");
+        const res = await axios.get("https://tera-connect-server.vercel.app/challenges");
         const featured = res.data
           .filter(ch => ch.featured) 
         setFeaturedChallenges(featured);

@@ -9,7 +9,7 @@ const ActiveChallenges = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get('http://localhost:5000/challenges/active')
+    axios.get('https://tera-connect-server.vercel.app/challenges/active')
       .then(res => setChallenges(res.data))
       .catch(err => console.log(err)
       )

@@ -10,7 +10,7 @@ const UpcomingEvents = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/events");
+        const res = await axios.get("https://tera-connect-server.vercel.app/events");
         setEvents(res.data.slice(0, 4)); // latest 4 events
       } catch (err) {
         console.error(err);

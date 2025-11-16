@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'challenge-details/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/challenges/${params.id}`),
+        loader: ({params}) => fetch(`https://tera-connect-server.vercel.app/challenges/${params.id}`),
         element: <PrivateRoute><ChallengeDetails/></PrivateRoute>,
         hydrateFallbackElement:<Loader></Loader>
       },
