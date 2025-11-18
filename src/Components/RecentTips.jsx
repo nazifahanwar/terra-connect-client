@@ -1,28 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaThumbsUp } from "react-icons/fa";
+import Loader from "./Loader";
 
 const RecentTips = () => {
   const [tips, setTips] = useState([]);
+  const [loading,setLoading] = useState(false);
 
+  
   useEffect(() => {
-    const fetchTips = async () => {
-      try {
-        const res = await axios.get("https://tera-connect-server.vercel.app/tips");
+    setLoading(true);
+    axios
+      .get("https://tera-connect-server.vercel.app/tips")
+      .then((res) => {
         const sortedTips = res.data
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
           .slice(0, 5);
         setTips(sortedTips);
-      } catch (err) {
+        setLoading(false); 
+      })
+      .catch((err) => {
         console.error("Failed to fetch tips:", err);
-      }
-    };
-
-    fetchTips();
+        setLoading(false); 
+      });
   }, []);
-
+  if (loading) return <Loader/>
   return (
-    <section className="container mx-auto mt-10 px-4">
+    <section className="container mx-auto mt-10 p-4">
   <h2 className="text-3xl font-bold text-[#22577a] mb-2 text-center">Recent Tips</h2>
       <p className="text-accent mb-3 text-center">Latest 5 community tips to help you live sustainably and reduce waste.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

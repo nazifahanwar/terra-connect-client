@@ -139,7 +139,7 @@ const handleGoogleSignIn = () => {
             <button
             type='submit'
               className={`w-full text-white font-medium py-2 rounded-md transition ${
-              loading ? 'bg-secondary cursor-not-allowed' : 'bg-[#22577a] hover:bg-[#45b885]'
+              loading ? 'bg-secondary cursor-not-allowed' : 'bg-[#22577a] hover:bg-[#38a3a5]'
             }`}
             disabled={loading}
           >

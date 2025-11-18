@@ -8,7 +8,7 @@ const Footer = () => {
   <footer className="footer sm:footer-horizontal text-base-content p-10 container mx-auto">
   <aside>
     <div className=''>
-        <img src={Logo} className="h-[80px] w-[80px]" />
+        <img src={Logo} alt='Logo' className="h-[80px] w-[80px]" />
     <p className='text-xl playwrite-au-tas text-white pt-2'>
             Terra Connect
     </p>

@@ -45,7 +45,7 @@ const handleLogOut = () => {
       </ul>
     </div>
     <div className='flex items-center justify-center lg:gap-1'>
-        <img src={logo} referrerPolicy="no-referrer" className="h-[40px] w-[40px]" />
+        <img src={logo} alt='logo' referrerPolicy="no-referrer" className="h-[40px] w-[40px]" />
     <Link className="mb-2 text-2xl text-white pt-2 font-medium">Terra Connect</Link>
 
     </div>
@@ -61,7 +61,7 @@ const handleLogOut = () => {
      {user ?  (
     <div className="dropdown dropdown-end flex bg-transparent">
       <div className='flex flex-col items-center '>
-        <img className="w-10 rounded-full border-2 border-white" referrerPolicy="no-referrer" src={user.photoURL || userIcon}/>
+        <img className="w-10 rounded-full border-2 border-white" referrerPolicy="no-referrer" src={user.photoURL || userIcon} alt='user photo'/>
       </div>
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar max-lg:hidden">
         <CiMenuFries className=" text-white text-2xl rounded-full"/>

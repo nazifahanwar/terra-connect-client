@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const CommunityStats = () => {
-  const [stats, setStats] = useState(null); // null while loading
+  const [stats, setStats] = useState(null);
 
   const fetchStats = async () => {
     try {

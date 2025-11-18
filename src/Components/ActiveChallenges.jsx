@@ -11,8 +11,7 @@ const ActiveChallenges = () => {
     setLoading(true);
     axios.get('https://tera-connect-server.vercel.app/challenges/active')
       .then(res => setChallenges(res.data))
-      .catch(err => console.log(err)
-      )
+
       setLoading(false);
   }, []);
 

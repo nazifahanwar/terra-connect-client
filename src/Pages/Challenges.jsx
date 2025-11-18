@@ -75,7 +75,12 @@ useEffect(() => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-screen">
         {loading ? [...Array(8)].map((_, i) => (
           <CardSkeleton key={i} />
-        )):filteredChallenges.map((challenge) => ( 
+        )):filteredChallenges.length === 0 && startDateFilter
+          ? (
+            <p className="text-center col-span-full text-3xl text-gray-500 min-h-screen flex justify-center items-center">
+              No challenges found that started from this date.
+            </p>
+          ):filteredChallenges.map((challenge) => ( 
           <Card key={challenge._id} challenge={challenge} />
         ))}
       </div>

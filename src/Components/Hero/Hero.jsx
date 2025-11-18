@@ -28,14 +28,14 @@ const [loading,setLoading] = useState(true)
       } catch (err) {
         console.error("Error fetching featured challenges:", err);
       }finally {
-        setLoading(false); // hide loader after data is fetched
+        setLoading(false); 
       }
     };
     fetchFeatured();
   }, []);
 const handleView = (id) => {
     if (user) {
-      navigate(`/challenge-details/${id}`);
+      navigate(`/challenges/join/${id}`);
     } else {
       navigate("/login");
     }
@@ -77,7 +77,7 @@ const handleView = (id) => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={handleView}
+                  onClick={() => handleView(item._id)}
                   className="px-6 py-3 bg-[#22577a] text-white font-semibold rounded-full shadow-md hover:bg-secondary transition-colors"
                 >
                   View Challenge

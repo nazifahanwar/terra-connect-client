@@ -1,16 +1,28 @@
-# React + Vite
+# Terra Connect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Link:** https://terra-connect-project.web.app/
 
-Currently, two official plugins are available:
+**Terra Connect** is a community platform where eco-conscious individuals can discover and join sustainability challenges, share practical eco-tips, browse local green events, and track personal environmental impact. The platform emphasizes **measurable, community-driven progress** toward a greener future.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Challenges**: Join sustainability challenges and track your impact.
+- **Tips**: Share and discover practical eco-friendly tips.
+- **Events**: Browse local green events in your area.
+- **Impact Tracking**: Monitor your personal environmental contributions.
+- **Community-driven**: See collective progress and achievements.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **Frontend**: React, TailwindCSS, DaisyUI, Vite  
+- **State Management & Networking**: Axios  
+- **UI & Animations**: React Icons, Swiper, Motion, Sonner  
+- **Notifications & Alerts**: SweetAlert2  
+- **Backend**: Node.js & MongoDB 
+- **Hosting / Deployment**: Vercel(For Backend) &
+Firebase(For Frontend)  
+

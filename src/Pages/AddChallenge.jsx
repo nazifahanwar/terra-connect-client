@@ -35,7 +35,7 @@ const AddChallenge = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('https://tera-connect-server.vercel.app/user-challenges', formData);
+      const res = await axios.post('https://tera-connect-server.vercel.app/challenges', formData);
       if (res.data.insertedId || res.data.acknowledged) {
         Swal.fire('Success', 'Challenge created successfully!', 'success');
         navigate('/challenges');
@@ -59,7 +59,7 @@ const AddChallenge = () => {
         <input type="number" name="duration" placeholder="Duration (Days)" value={formData.duration} onChange={handleChange} className="input input-bordered w-full" required />
         <input type="text" name="target" placeholder="Target(Numbers)" value={formData.target} onChange={handleChange} className="input input-bordered w-full" required />
         <input type="text" name="impactMetric" placeholder="Impact Metric" value={formData.impactMetric} onChange={handleChange} className="input input-bordered w-full" required />
-        <input type="email" name="createdBy" placeholder="Your Email" value={formData.createdBy} onChange={handleChange} className="input input-bordered w-full" required />
+        <input type="email" name="createdBy" placeholder="Please provide the email you registered with." value={formData.createdBy} onChange={handleChange} className="input input-bordered w-full" required />
        <div className="flex gap-2">
   <div className="flex flex-col w-full">
     <label className="text-sm mb-1">Start Date</label>

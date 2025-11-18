@@ -4,13 +4,14 @@ import { VscAccount } from "react-icons/vsc";
 import { useLoaderData } from "react-router";
 import axios from "axios";
 import { AuthContext } from "../AuthContext/AuthContext";
+import { toast } from "sonner";
 
 const ChallengeDetails = () => {
   const{user}= use(AuthContext)
-  const challenge = useLoaderData(); // loaded challenge data
+  const challenge = useLoaderData(); 
   const [userJoined, setUserJoined] = useState(false);
-  const [loading, setLoading] = useState(false);
 
+  
 
  useEffect(() => {
     const fetchUserChallenge = async () => {
@@ -30,19 +31,13 @@ const ChallengeDetails = () => {
 
   const joinChallenge = async () => {
     if (!user?.email) return alert("Login first!");
-    setLoading(true);
 
-    try {
       await axios.post(`https://tera-connect-server.vercel.app/challenges/join/${challenge._id}`, {
         buyer_email: user.email
       });
       setUserJoined(true);
-    } catch (err) {
-      console.error(err);
-      alert(err.response?.data?.message || "Failed to join");
-    } finally {
-      setLoading(false);
-    }
+      toast.success("Successfully joined!");
+      
   };
   return (
     <div className="max-w-6xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl flex flex-col lg:flex-row gap-8">
@@ -75,20 +70,16 @@ const ChallengeDetails = () => {
               <span>{challenge.impactMetric}</span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <FaUser className="text-[#22577a]" />
-            <span>Participants: {challenge.participants}</span>
-          </div>
+         
         </div>
 
         <div className="mt-6">
           {!userJoined ? (
             <button
               onClick={joinChallenge}
-              disabled={loading}
               className="w-full bg-[#22577a] text-white p-3 rounded-lg hover:bg-[#1b3f55] transition"
             >
-              {loading ? "Joining..." : "Join Challenge"}
+              Join Challenge
             </button>
           ) : (
             <button

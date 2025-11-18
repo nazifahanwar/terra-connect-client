@@ -8,7 +8,7 @@ import logo from '../assets/icons8-sustainability-64.png'
 import { toast } from 'sonner';
 
 const LogIn = () => {
-  const { signIn, signInWithGoogle, setUser,loading} = use(AuthContext);
+  const { signIn, signInWithGoogle, setUser,loading,setLoading} = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
@@ -19,12 +19,14 @@ const LogIn = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    
     signIn(email, password)
       .then(() => {
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         toast.error(error.message);
+        setLoading(false)
       });
   };
 
@@ -39,9 +41,7 @@ const LogIn = () => {
         setUser(result.user);
         navigate(`${location.state ? location.state : "/"}`);
       })
-      .catch(error => {
-        console.log(error)
-      });
+      
   };
 
   
@@ -101,7 +101,7 @@ const LogIn = () => {
 
             <button
               type="submit"className={`w-full text-white font-medium py-2 rounded-md transition ${
-              loading ? 'bg-secondary cursor-not-allowed' : 'bg-[#22577a] hover:bg-[#45b885]'
+              loading ? 'bg-secondary cursor-not-allowed' : 'bg-[#22577a] hover:bg-[#38a3a5]'
             }`}
             disabled={loading}
           >
